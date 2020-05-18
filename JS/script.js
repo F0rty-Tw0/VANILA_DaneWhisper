@@ -7,8 +7,11 @@ $(document).ready(() => {
 
 	var typed = new Typed('.typed', {
 		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label.', 'Synth^100wave Pro^50du^100cer.' ],
-		typeSpeed: 50,
+		typeSpeed: 60,
 		smartBackspace: true,
-		backSpeed: 30
+		backSpeed: 30,
+		loop: true,
+		startDelay: 1000,
+		showCursor: false
 	});
 });
