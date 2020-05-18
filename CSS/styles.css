@@ -1,28 +1,3 @@
-.overlay {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	z-index: 3;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-.slides-navigation .next,
-.slides-navigation .prev {
-	width: 47px;
-	height: 47px;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.slides-navigation a.next {
-	right: 20px;
-	background-image: url(../Images/Icons/Next.png);
-}
-
-.slides-navigation a.prev {
-	left: 20px;
-	background-image: url(../Images/Icons/Prev.png);
-}
-
 .title-message {
 	position: absolute;
 	width: 100%;
@@ -44,5 +19,63 @@
 }
 .title-message .heading .sub {
 	font-size: 2em;
+}
 
+.section {
+	padding: 100px 0;
+	background-color: #e8ebf0;
+}
+
+.about-photo {
+	max-width: 100%;
+}
+
+.about-text {
+	padding-top: 8em;
+}
+
+.section-card {
+	margin-top: -9em;
+}
+
+@media screen and (max-width: 1200px) {
+	.title-message .heading .main {
+		font-size: 8em;
+    }
+    .title-message .heading .sub {
+        font-size: 1.4em;
+    }
+    .about-text {
+        padding-top: 3em;
+    }
+}
+@media screen and (max-width: 992px) {
+	.title-message .heading .main {
+        margin-top: -0.6em;
+		font-size: 7em;
+    }
+    .title-message .heading .sub {
+        font-size: 1.2em;
+    }
+    .about-text {
+        padding-top: 1em;
+    }
+}
+@media screen and (max-width: 768px) {
+	.title-message .heading .main {
+        margin-top: -0.8em;
+		font-size: 6em;
+    }
+    .title-message .heading .sub {
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 576px) {
+	.title-message .heading .main {
+        font-size: 5em;
+        margin-top: -1em;
+    }
+    .title-message .heading .sub {
+        font-size: 0.8em;
+    }
 }
