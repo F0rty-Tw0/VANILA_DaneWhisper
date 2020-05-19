@@ -4,6 +4,7 @@
 <head>
     <title>Dane Whisper Official</title>
     <link rel="stylesheet" type="text/css" href="./CSS/super-slides.css">
+    <link rel="stylesheet" type="text/css" href="./CSS/owl.css">
     <link rel="stylesheet" type="text/css" href="./CSS/styles.css">
     <!-- Streamster Font import -->
     <link href="https://www.coding-dude.com/fonts/streamster-stylesheet.css" rel="stylesheet">
@@ -15,6 +16,7 @@
 
 
 <body>
+    <div id="loading"><p class="title-message loading">Dane Whisper</p></div>
     <div id="slides">
         <div class="overlay"></div>
         <div class="slides-container">
@@ -39,7 +41,7 @@
 
     <div id="about" class="section">
         <div class="container">
-            <div class="section-card card shadow-lg p-3 mb-5 bg-white rounded">
+            <div id="section-card" class="card shadow-lg p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-lg-5">
                         <img class="about-photo image-fluid" src="Images/photo.png" alt="">
@@ -67,8 +69,64 @@
         </div>
     </div>
 
+    <div id="info" class="info-section section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Achievements</h2>
+                    <p class="info-description">A representation of what did i achieved</p>
+                    <div class="owl-carousel owl-theme">
+                        <div class="achiev">
+                            <span class="chart" data-percent="78">
+                                <span class="percent"></span>
+                                <canvas height="200" width="200"></canvas>
+                            </span>
+                            <h4>SoundCloud</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div class="achiev">
+                            <span class="chart" data-percent="13">
+                                <span class="percent"></span>
+                                <canvas height="200" width="200"></canvas>
+                            </span>
+                            <h4>Youtube</h4>
+                            <p>Subscribers</p>
+                        </div>
+                        <div class="achiev">
+                            <span class="chart" data-percent="90">
+                                <span class="percent"></span>
+                                <canvas height="200" width="200"></canvas>
+                            </span>
+                            <h4>Twitter</h4>
+                            <p>Followers</p>
+                        </div>
+                        <div class="achiev">
+                            <span class="chart" data-percent="48">
+                                <span class="percent"></span>
+                                <canvas height="200" width="200"></canvas>
+                            </span>
+                            <h4>Spotify</h4>
+                            <p>Monthly Listeners</p>
+                        </div>
+                        <div class="achiev">
+                            <span class="chart" data-percent="37">
+                                <span class="percent"></span>
+                                <canvas height="200" width="200"></canvas>
+                            </span>
+                            <h4>Bandcamp</h4>
+                            <p>Followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="./JS/super-slides.js"></script>
     <script src="./JS/typed.js"></script>
+    <script src="./JS/owl.js"></script>
+    <script src="./JS/pie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>

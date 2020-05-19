@@ -1,3 +1,8 @@
+body {
+	color: #333;
+	letter-spacing: 0.8px;
+}
+
 .title-message {
 	position: absolute;
 	width: 100%;
@@ -13,7 +18,8 @@
 	letter-spacing: 3px;
 	text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.title-message .heading .main {
+.title-message .heading .main,
+.loading {
 	font-size: 10em;
 	font-family: 'Streamster', Helvetica, Sans-Serif;
 }
@@ -21,9 +27,31 @@
 	font-size: 2em;
 }
 
+.loading {
+	position: relative;
+	color: #ffff;
+	top: 3em;
+}
 .section {
 	padding: 100px 0;
-	background-color: #e8ebf0;
+}
+
+#loading {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: #08081a url(../Images/Icons/loading.gif) no-repeat center center;
+	z-index: 9999;
+}
+
+#about {
+	background-color: #d9dee6;
+}
+
+#info {
+	margin-top: -200px;
+	background-color: #132040;
+	color: #fff;
 }
 
 .about-photo {
@@ -34,48 +62,84 @@
 	padding-top: 8em;
 }
 
-.section-card {
+#section-card {
 	margin-top: -9em;
+	background-color: #eceef2 !important;
+	opacity: none;
+}
+
+.info-section .info-description {
+	margin-bottom: 5em;
+}
+
+.achiev {
+	text-align: center;
+	margin-left: 10px;
+}
+.chart {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 2em;
+}
+
+.chart canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.chart .percent {
+	line-height: 200px;
+	color: #fff;
+	display: inline-block;
+	font-size: 3em;
 }
 
 @media screen and (max-width: 1200px) {
-	.title-message .heading .main {
+	.title-message .heading .main,
+	.loading {
 		font-size: 8em;
-    }
-    .title-message .heading .sub {
-        font-size: 1.4em;
-    }
-    .about-text {
-        padding-top: 3em;
-    }
+	}
+	.title-message .heading .sub {
+		font-size: 1.4em;
+	}
+	.about-text {
+		padding-top: 3em;
+	}
 }
 @media screen and (max-width: 992px) {
-	.title-message .heading .main {
-        margin-top: -0.6em;
+	.title-message .heading .main,
+	.loading {
+		margin-top: -0.6em;
 		font-size: 7em;
-    }
-    .title-message .heading .sub {
-        font-size: 1.2em;
-    }
-    .about-text {
-        padding-top: 1em;
-    }
+	}
+	.title-message .heading .sub {
+		font-size: 1.2em;
+	}
+	.about-text {
+		padding-top: 1em;
+	}
 }
 @media screen and (max-width: 768px) {
-	.title-message .heading .main {
-        margin-top: -0.8em;
+	.title-message .heading .main,
+	.loading {
+		margin-top: -0.8em;
 		font-size: 6em;
-    }
-    .title-message .heading .sub {
-        font-size: 1em;
-    }
+	}
+	.title-message .heading .sub {
+		font-size: 1em;
+	}
 }
 @media screen and (max-width: 576px) {
-	.title-message .heading .main {
-        font-size: 5em;
-        margin-top: -1em;
-    }
-    .title-message .heading .sub {
-        font-size: 0.8em;
-    }
+	.title-message .heading .main,
+	.loading {
+		font-size: 5em;
+		margin-top: -1em;
+	}
+	.title-message .heading .sub {
+		font-size: 0.8em;
+	}
 }
