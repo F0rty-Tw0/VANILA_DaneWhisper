@@ -40,7 +40,7 @@ $(document).ready(() => {
 	var infoTopOffset = $('.info-section').offset().top;
 
 	$(window).scroll(function() {
-		if (window.pageYOffset > infoTopOffset - $(window).height() + 300) {
+		if (window.pageYOffset > infoTopOffset - $(window).height() + 800) {
 			$('.chart').easyPieChart({
 				easing: 'easeInOut',
 				barColor: '#fff',
