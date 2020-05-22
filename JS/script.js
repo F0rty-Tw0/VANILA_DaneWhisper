@@ -18,11 +18,30 @@ $(document).ready(() => {
 		showCursor: false
 	});
 
-	$('.owl-carousel').owlCarousel({
+	$('#owl-one').owlCarousel({
 		loop: true,
 		margin: 10,
 		nav: true,
 		navText: [ "<div class='nav-btn prev-slide'></div>", "<div class='nav-btn next-slide'></div>" ],
+		responsive: {
+			0: {
+				items: 1
+			},
+			576: {
+				items: 1
+			},
+			768: {
+				items: 2
+			},
+			992: {
+				items: 4
+			}
+		}
+	});
+
+	$('#owl-two').owlCarousel({
+		loop: true,
+		margin: 10,
 		responsive: {
 			0: {
 				items: 1
@@ -80,5 +99,32 @@ $(document).ready(() => {
 			});
 			coutnUpFinished = true;
 		}
+	});
+
+	$('[data-fancybox]').fancybox();
+	$('.items').isotope({
+		filter: '*',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear',
+			queue: false
+		}
+	});
+
+	$('#filters a').click(function() {
+		$('#filters .current').removeClass('current');
+		$(this).addClass('current');
+
+		var selector = $(this).attr('data-filter');
+
+		$('.items').isotope({
+			filter: selector,
+			animationOptions: {
+				duration: 1500,
+				easing: 'linear',
+				queue: false
+			}
+		});
+		return false;
 	});
 });
