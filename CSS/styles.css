@@ -44,7 +44,7 @@ body {
 	z-index: 9999;
 }
 
-#about {
+#about, #stats {
 	background-color: #d9dee6;
 }
 
@@ -98,6 +98,87 @@ body {
 	font-size: 3em;
 }
 
+.owl-carousel .nav-btn {
+	position: absolute;
+	cursor: pointer;
+	top: 75px !important;
+}
+.owl-carousel .owl-prev.disabled,
+.owl-carousel .owl-next.disabled {
+	pointer-events: none;
+	opacity: 0.2;
+}
+.owl-carousel .owl-nav {
+	overflow: hidden;
+	height: 0px;
+}
+
+.next-slide,
+.prev-slide {
+	width: 47px;
+	height: 47px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.owl-carousel .next-slide {
+	right: -2.5em;
+	background-image: url(../Images/Icons/Next.png);
+}
+
+.owl-carousel .prev-slide {
+	left: -2em;
+	background-image: url(../Images/Icons/Prev.png);
+}
+
+.square-item {
+	margin-top: 2em;
+	position: relative;
+}
+
+.square-inner-container {
+	position: relative;
+	padding: 50px 15px 35px;
+	text-align: center;
+	border: 2px solid #444;
+	border-top: none;
+}
+.square-icon {
+	position: absolute;
+	left: 34%;
+	top: -50px;
+	height: 60px;
+	font-size: 5em;
+	color: #132040;
+	text-align: center;
+}
+.square-inner-container :before,
+.square-inner-container :after {
+	content: '';
+	position: absolute;
+	top: 0px;
+	width: 30%;
+	border-bottom: 2px solid #444;
+}
+
+.square-inner-container :before {
+	right: 0px;
+}
+.square-inner-container :after {
+	left: 0px;
+}
+.square-content h2 {
+	font-size: 5em;
+	margin-bottom: 10px;
+	font-weight: 400;
+	color: #132040;
+}
+.square-content h3 {
+	font-size: 1em;
+	margin: 0;
+	font-weight: 600;
+}
+
 @media screen and (max-width: 1200px) {
 	.title-message .heading .main,
 	.loading {
@@ -109,6 +190,16 @@ body {
 	.about-text {
 		padding-top: 3em;
 	}
+	.square-icon {
+		left: 31%;
+	}
+	.owl-carousel .prev-slide{
+		left: -2.7em;
+	}
+	.owl-carousel .next-slide {
+		right: -3em;
+	}
+
 }
 @media screen and (max-width: 992px) {
 	.title-message .heading .main,
@@ -122,6 +213,15 @@ body {
 	.about-text {
 		padding-top: 1em;
 	}
+	.square-icon {
+		margin-left: 7%;
+	}
+	.owl-carousel .prev-slide{
+		left: -3em;
+	}
+	.owl-carousel .next-slide {
+		right: -3.5em;
+	}
 }
 @media screen and (max-width: 768px) {
 	.title-message .heading .main,
@@ -132,6 +232,10 @@ body {
 	.title-message .heading .sub {
 		font-size: 1em;
 	}
+
+	.square-icon {
+		margin-left: 11% !important;
+	}
 }
 @media screen and (max-width: 576px) {
 	.title-message .heading .main,
@@ -141,5 +245,11 @@ body {
 	}
 	.title-message .heading .sub {
 		font-size: 0.8em;
+	}
+	.owl-carousel .prev-slide{
+		left: 1px;
+	}
+	.owl-carousel .next-slide {
+		right: 1px;
 	}
 }
