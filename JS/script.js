@@ -66,7 +66,7 @@ $(document).ready(() => {
 	$('.next-slide').fadeOut(200);
 	$('.prev-slide').fadeOut(200);
 	$(window).scroll(function() {
-		if (window.pageYOffset > infoTopOffset - $(window).height() + 600) {
+		if (window.pageYOffset > infoTopOffset - $(window).height() + 400) {
 			$('.chart').easyPieChart({
 				easing: 'easeInOut',
 				barColor: '#fff',
@@ -76,7 +76,7 @@ $(document).ready(() => {
 				size: 200,
 				onStep: function(from, to, percent) {
 					$(this.el).find('.percent').text(Math.round(percent * 23));
-				}
+				},
 			});
 			$('.next-slide').fadeIn(200);
 			$('.prev-slide').fadeIn(200);

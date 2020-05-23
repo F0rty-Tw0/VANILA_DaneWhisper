@@ -293,7 +293,7 @@ body {
 .items a {
 	width: 40px;
 	height: 40px;
-	background-color: #132040;
+	background-color: rgba(19, 32, 64, 0.8) !important;
 	position: relative;
 	display: inline-block;
 	transition: all 0.2s linear, 1s;
@@ -339,6 +339,15 @@ body {
 .items .item:hover .project-link {
 	right: 0px;
 	opacity: 1;
+}
+
+.copyright-section {
+	background-color: #132040;
+	color: #fff;
+	padding: 15px 5px;
+}
+.copyright-section p {
+	margin: 0;
 }
 
 @media screen and (max-width: 3320px) {
@@ -445,6 +454,11 @@ body {
 	}
 }
 
+@media screen and (max-width: 414px) {
+	.square-icon {
+		margin-left: 7%;
+	}
+}
 @media screen and (max-width: 376px) {
 	.square-icon {
 		margin-left: 6%;
