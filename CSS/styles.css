@@ -521,6 +521,9 @@ body {
 #owl-two {
 	padding: 0 40px;
 }
+.owl-carousel {
+	cursor: pointer;
+}
 #section-card {
 	margin-top: -9em;
 	background-color: #eceef2 !important;
@@ -783,7 +786,6 @@ body {
 
 #cta {
 	width: 100%;
-	cursor: pointer;
 	position: absolute;
 }
 

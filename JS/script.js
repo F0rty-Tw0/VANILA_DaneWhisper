@@ -104,7 +104,7 @@ $(document).ready(() => {
 			});
 		}
 
-		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 400) {
+		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 150) {
 			$('.counter').each(function() {
 				var element = $(this);
 				var endVal = parseInt(element.text());
