@@ -1,8 +1,18 @@
-$(document).ready(() => {
+$(window).on('load', function() {
 	$('.inner').fadeOut(750, function() {
 		$('#loading').fadeOut(1000);
 	});
+	$('.items').isotope({
+		filter: '*',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear',
+			queue: false
+		}
+	});
+});
 
+$(document).ready(() => {
 	$('#slides').superslides({
 		animation: 'fade',
 		play: 4000,
@@ -105,14 +115,6 @@ $(document).ready(() => {
 	});
 
 	$('[data-fancybox]').fancybox();
-	$('.items').isotope({
-		filter: '*',
-		animationOptions: {
-			duration: 1500,
-			easing: 'linear',
-			queue: false
-		}
-	});
 
 	$('#filters a').click(function() {
 		$('#filters .current').removeClass('current');
