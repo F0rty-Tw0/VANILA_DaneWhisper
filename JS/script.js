@@ -86,9 +86,11 @@ $(document).ready(() => {
 		if (window.pageYOffset > TopOffset - $(window).height()) {
 			$('#slides').css('z-index', 0);
 			$('#section-card ').fadeIn(200);
+			$('.arrow').fadeOut(200);
 		} else {
 			$('#section-card ').fadeOut(200, function() {
 				$('#slides').css('z-index', '0');
+				$('.arrow').fadeIn(200);
 			});
 		}
 
