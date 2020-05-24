@@ -2,6 +2,9 @@ $(window).on('load', function() {
 	$('.inner').fadeOut(500, function() {
 		$('#loading').fadeOut(750);
 	});
+});
+
+$(document).ready(() => {
 	$('.items').isotope({
 		filter: '.covers',
 		animationOptions: {
@@ -10,9 +13,7 @@ $(window).on('load', function() {
 			queue: false
 		}
 	});
-});
 
-$(document).ready(() => {
 	$('#slides').superslides({
 		animation: 'fade',
 		play: 4000,
