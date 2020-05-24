@@ -1,9 +1,9 @@
 $(window).on('load', function() {
-	$('.inner').fadeOut(750, function() {
-		$('#loading').fadeOut(1000);
+	$('.inner').fadeOut(500, function() {
+		$('#loading').fadeOut(750);
 	});
 	$('.items').isotope({
-		filter: '*',
+		filter: '.covers',
 		animationOptions: {
 			duration: 1500,
 			easing: 'linear',
@@ -104,7 +104,7 @@ $(document).ready(() => {
 			});
 		}
 
-		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 150) {
+		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
 			$('.counter').each(function() {
 				var element = $(this);
 				var endVal = parseInt(element.text());
