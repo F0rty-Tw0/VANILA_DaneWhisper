@@ -11,18 +11,11 @@ $(window).on('load', function() {
 			queue: false
 		}
 	});
+
+	$('.items').isotope('reLayout');
 });
 
 $(document).ready(() => {
-	$('.items').isotope({
-		filter: '.covers',
-		animationOptions: {
-			duration: 1500,
-			easing: 'linear',
-			queue: false
-		}
-	});
-
 	$('#slides').superslides({
 		animation: 'fade',
 		play: 4000,
