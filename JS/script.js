@@ -2,6 +2,15 @@ $(window).on('load', function() {
 	$('.inner').fadeOut(500, function() {
 		$('#loading').fadeOut(750);
 	});
+
+	$('.items').isotope({
+		filter: '.covers',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear',
+			queue: false
+		}
+	});
 });
 
 $(document).ready(() => {
