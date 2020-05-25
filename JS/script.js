@@ -1,15 +1,8 @@
 $(window).on('load', function() {
-	$('.inner').fadeOut(500, function() {
-		$('#loading').fadeOut(750);
-	});
-
-	$('.items').isotope({
-		filter: '.covers',
-		animationOptions: {
-			duration: 1500,
-			easing: 'linear',
-			queue: false
-		}
+	$.getScript('https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js', function() {
+		$('.inner').fadeOut(500, function() {
+			$('#loading').fadeOut(750);
+		});
 	});
 });
 
@@ -20,7 +13,14 @@ $(document).ready(() => {
 		pagination: false
 	});
 
-	$('.items').isotope('reLayout');
+	$('.items').isotope({
+		filter: '.covers',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear',
+			queue: false
+		}
+	});
 
 	var typed = new Typed('.typed', {
 		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label^1000', 'Synth^100wave Pro^50du^100cer^5000 ' ],
