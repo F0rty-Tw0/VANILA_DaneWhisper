@@ -11,8 +11,6 @@ $(window).on('load', function() {
 			queue: false
 		}
 	});
-
-	$('.items').isotope('reLayout');
 });
 
 $(document).ready(() => {
@@ -21,6 +19,8 @@ $(document).ready(() => {
 		play: 4000,
 		pagination: false
 	});
+
+	$('.items').isotope('reLayout');
 
 	var typed = new Typed('.typed', {
 		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label^1000', 'Synth^100wave Pro^50du^100cer^5000 ' ],
