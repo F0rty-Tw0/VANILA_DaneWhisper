@@ -1,9 +1,33 @@
 $(window).on('load', function() {
-	$.getScript('https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js', function() {
-		$('.inner').fadeOut(500, function() {
-			$('#loading').fadeOut(750);
-		});
+	$('.inner').fadeOut(300, function() {
+		$('#loading').fadeOut(550);
 	});
+
+	$('.items').isotope({
+		filter: '.singles',
+		animationOptions: {
+			duration: 1500,
+			easing: 'linear'
+		}
+	});
+	var myVideo = document.getElementById('video1');
+
+	function playPause() {
+		if (myVideo.paused) myVideo.play();
+		else myVideo.pause();
+	}
+
+	function makeBig() {
+		myVideo.width = 560;
+	}
+
+	function makeSmall() {
+		myVideo.width = 320;
+	}
+
+	function makeNormal() {
+		myVideo.width = 420;
+	}
 });
 
 $(document).ready(() => {
@@ -11,15 +35,6 @@ $(document).ready(() => {
 		animation: 'fade',
 		play: 4000,
 		pagination: false
-	});
-
-	$('.items').isotope({
-		filter: '.covers',
-		animationOptions: {
-			duration: 1500,
-			easing: 'linear',
-			queue: false
-		}
 	});
 
 	var typed = new Typed('.typed', {
@@ -64,10 +79,10 @@ $(document).ready(() => {
 				items: 2
 			},
 			768: {
-				items: 3
+				items: 2
 			},
 			992: {
-				items: 4
+				items: 2
 			}
 		}
 	});
@@ -89,7 +104,7 @@ $(document).ready(() => {
 				lineWidth: 4,
 				size: 200,
 				onStep: function(from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent * 23));
+					$(this.el).find('.percent').text(Math.round(percent * 22.5));
 				}
 			});
 			$('.next-slide').fadeIn(200);
@@ -99,11 +114,11 @@ $(document).ready(() => {
 		if (window.pageYOffset > TopOffset - $(window).height()) {
 			$('#slides').css('z-index', 0);
 			$('#section-card ').fadeIn(200);
-			$('.arrow').fadeOut(200);
+			return $('.arrow').fadeOut(200);
 		} else {
 			$('#section-card ').fadeOut(200, function() {
 				$('#slides').css('z-index', '0');
-				$('.arrow').fadeIn(200);
+				return $('.arrow').fadeIn(200);
 			});
 		}
 
