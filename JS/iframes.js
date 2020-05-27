@@ -19,4 +19,6 @@ $(document).ready(function() {
 		'src',
 		'https://bandcamp.com/EmbeddedPlayer/track=3880894465/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none/transparent=true/'
 	);
+	$('#video1').html('<source src="Videos/video1.mp4" type="video/mp4"></source>');
+	$('#video2').html('<source src="Videos/video2.mp4" type="video/mp4"></source>');
 });
