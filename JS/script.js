@@ -37,6 +37,25 @@ $(document).ready(() => {
 		pagination: false
 	});
 
+	$('[data-fancybox]').fancybox();
+
+	$('#filters a').click(function() {
+		$('#filters .current').removeClass('current');
+		$(this).addClass('current');
+
+		var selector = $(this).attr('data-filter');
+
+		$('.items').isotope({
+			filter: selector,
+			animationOptions: {
+				duration: 1500,
+				easing: 'linear',
+				queue: false
+			}
+		});
+		return false;
+	});
+
 	var typed = new Typed('.typed', {
 		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label^1000', 'Synth^100wave Pro^50du^100cer^5000 ' ],
 		typeSpeed: 60,
@@ -67,6 +86,9 @@ $(document).ready(() => {
 			}
 		}
 	});
+
+	$('#video1').html('<source src="Videos/video1.mp4" type="video/mp4"></source>');
+	$('#video2').html('<source src="Videos/video2.mp4" type="video/mp4"></source>');
 
 	$('#owl-two').owlCarousel({
 		loop: true,
@@ -130,25 +152,6 @@ $(document).ready(() => {
 			});
 			coutnUpFinished = true;
 		}
-	});
-
-	$('[data-fancybox]').fancybox();
-
-	$('#filters a').click(function() {
-		$('#filters .current').removeClass('current');
-		$(this).addClass('current');
-
-		var selector = $(this).attr('data-filter');
-
-		$('.items').isotope({
-			filter: selector,
-			animationOptions: {
-				duration: 1500,
-				easing: 'linear',
-				queue: false
-			}
-		});
-		return false;
 	});
 
 	jQuery(function($) {
