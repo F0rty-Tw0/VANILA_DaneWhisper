@@ -1,0 +1,21 @@
+$('.bison').attr(
+	'src',
+	'https://bandcamp.com/EmbeddedPlayer/track=2756157548/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none'
+);
+$('.feelings').attr(
+	'src',
+	'https://bandcamp.com/EmbeddedPlayer/track=3880894465/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none'
+);
+$('.iCanLove').attr(
+	'src',
+	'https://bandcamp.com/EmbeddedPlayer/album=2546075425/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none/track=2932352549'
+);
+$('.tueoo').attr(
+	'src',
+	'https://bandcamp.com/EmbeddedPlayer/album=2546075425/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none/track=1732770957'
+);
+$('.gagarin').attr(
+	'src',
+	'https://bandcamp.com/EmbeddedPlayer/album=2546075425/size=small/bgcol=ffffff/linkcol=63b2cc/artwork=none/track=4272542702'
+);
+console.log('frames 1')

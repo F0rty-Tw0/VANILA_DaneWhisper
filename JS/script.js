@@ -1,20 +1,19 @@
-document.addEventListener('DOMContentLoaded', function(event) {
-	let head = document.querySelector('head');
+let head = document.querySelector('head');
+let loadJS = function(src) {
+	let jsLink = document.createElement('script');
+	jsLink.src = src;
+	head.appendChild(jsLink);
+};
 
-	let loadJS = function(src) {
-		let jsLink = document.createElement('script');
-		jsLink.src = src;
-		head.appendChild(jsLink);
-	};
+document.addEventListener('DOMContentLoaded', function(event) {
 	loadJS('./JS/iso.js');
-	loadJS('./JS/iframes.js');
 	ready = false;
 });
 
 $(window).on('load', function() {
-	$('.inner').fadeOut(500, function() {
-		$('#loading').fadeOut(750);
-	});
+	loadJS('./JS/iframes1.js');
+	loadJS('./JS/iframes2.js');
+	loadJS('./JS/iframes3.js');
 	$('.items').isotope({
 		filter: '.singles',
 		animationOptions: {
@@ -22,8 +21,8 @@ $(window).on('load', function() {
 			easing: 'linear'
 		}
 	});
-	$('#filters a').click(function() {
-		$('#filters .current').removeClass('current');
+	$('.filters a').click(function() {
+		$('.filters .current').removeClass('current');
 		$(this).addClass('current');
 
 		var selector = $(this).attr('data-filter');
@@ -32,15 +31,19 @@ $(window).on('load', function() {
 			filter: selector,
 			animationOptions: {
 				duration: 1500,
-				easing: 'linear',
-				queue: false
+				easing: 'linear'
 			}
 		});
 		return false;
 	});
+	$('#albums').css('opacity', '1');
 });
 
 $(document).ready(() => {
+	$('.inner').fadeOut(500, function() {
+		$('#loading').fadeOut(750);
+	});
+
 	$('#slides').superslides({
 		animation: 'fade',
 		play: 4000,
@@ -48,19 +51,6 @@ $(document).ready(() => {
 	});
 
 	$('[data-fancybox]').fancybox();
-
-	$('#video1').html('<source src="Videos/video1.mp4" type="video/mp4"></source>');
-	$('#video2').html('<source src="Videos/video2.mp4" type="video/mp4"></source>');
-
-	var typed = new Typed('.typed', {
-		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label^1000', 'Synth^100wave Pro^50du^100cer^5000 ' ],
-		typeSpeed: 60,
-		smartBackspace: true,
-		backSpeed: 30,
-		loop: true,
-		startDelay: 2500,
-		showCursor: false
-	});
 
 	$('#owl-one').owlCarousel({
 		loop: true,
@@ -83,30 +73,8 @@ $(document).ready(() => {
 		}
 	});
 
-	$('#owl-two').owlCarousel({
-		loop: true,
-		margin: 10,
-		responsive: {
-			0: {
-				items: 1
-			},
-			576: {
-				items: 2
-			},
-			768: {
-				items: 2
-			},
-			992: {
-				items: 2
-			}
-		}
-	});
-
 	var infoTopOffset = $('.info-section').offset().top;
-	var statsTopOffset = $('.stats-section').offset().top;
 	var TopOffset = $('#about').offset().top;
-	var coutnUpFinished = false;
-	$('#section-card ').css('opacity', '0');
 	$(window).scroll(function() {
 		if (window.pageYOffset > infoTopOffset - $(window).height() + 400) {
 			$('.chart').easyPieChart({
@@ -124,20 +92,11 @@ $(document).ready(() => {
 		}
 
 		if (window.pageYOffset > TopOffset - $(window).height()) {
-			$('#section-card ').css('opacity', '1');
+			$('#about .container').css('opacity', '1');
 			$('.arrow').css('opacity', '0');
 		} else {
-			$('#section-card').css('opacity', '0');
+			$('#about .container').css('opacity', '0');
 			$('.arrow').css('opacity', '1');
-		}
-
-		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
-			$('.counter').each(function() {
-				var element = $(this);
-				var endVal = parseInt(element.text());
-				element.countup(endVal);
-			});
-			coutnUpFinished = true;
 		}
 	});
 
