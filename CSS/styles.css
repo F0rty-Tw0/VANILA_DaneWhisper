@@ -474,6 +474,7 @@ body {
 	left: 50%;
 	z-index: 10;
 	transform: translate(-50%, -50%);
+	transition: opacity 0.5s ease-in-out;
 }
 .arrow span {
 	display: block;
@@ -508,7 +509,8 @@ body {
 #stats {
 	background-color: #d9dee6;
 }
-#info {
+#info,
+#contact {
 	margin-top: -200px;
 }
 #info,
@@ -539,7 +541,7 @@ body {
 #section-card {
 	margin-top: -9em;
 	background-color: #eceef2 !important;
-	opacity: none;
+	transition: opacity 0.3s ease-in-out;
 }
 .info-section .info-description {
 	margin-bottom: 5em;
@@ -568,9 +570,11 @@ body {
 	font-size: 3em;
 }
 .owl-carousel .nav-btn {
+	opacity: 0;	
 	position: absolute;
 	cursor: pointer;
 	top: 75px !important;
+	transition: opacity 0.5s ease-in-out;
 }
 .owl-carousel .owl-prev.disabled,
 .owl-carousel .owl-next.disabled {

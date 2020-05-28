@@ -1,8 +1,20 @@
-$(window).on('load', function() {
-	$('.inner').fadeOut(300, function() {
-		$('#loading').fadeOut(550);
-	});
+document.addEventListener('DOMContentLoaded', function(event) {
+	let head = document.querySelector('head');
 
+	let loadJS = function(src) {
+		let jsLink = document.createElement('script');
+		jsLink.src = src;
+		head.appendChild(jsLink);
+	};
+	loadJS('./JS/iso.js');
+	loadJS('./JS/iframes.js');
+	ready = false;
+});
+
+$(window).on('load', function() {
+	$('.inner').fadeOut(500, function() {
+		$('#loading').fadeOut(750);
+	});
 	$('.items').isotope({
 		filter: '.singles',
 		animationOptions: {
@@ -10,35 +22,6 @@ $(window).on('load', function() {
 			easing: 'linear'
 		}
 	});
-	var myVideo = document.getElementById('video1');
-
-	function playPause() {
-		if (myVideo.paused) myVideo.play();
-		else myVideo.pause();
-	}
-
-	function makeBig() {
-		myVideo.width = 560;
-	}
-
-	function makeSmall() {
-		myVideo.width = 320;
-	}
-
-	function makeNormal() {
-		myVideo.width = 420;
-	}
-});
-
-$(document).ready(() => {
-	$('#slides').superslides({
-		animation: 'fade',
-		play: 4000,
-		pagination: false
-	});
-
-	$('[data-fancybox]').fancybox();
-
 	$('#filters a').click(function() {
 		$('#filters .current').removeClass('current');
 		$(this).addClass('current');
@@ -55,6 +38,19 @@ $(document).ready(() => {
 		});
 		return false;
 	});
+});
+
+$(document).ready(() => {
+	$('#slides').superslides({
+		animation: 'fade',
+		play: 4000,
+		pagination: false
+	});
+
+	$('[data-fancybox]').fancybox();
+
+	$('#video1').html('<source src="Videos/video1.mp4" type="video/mp4"></source>');
+	$('#video2').html('<source src="Videos/video2.mp4" type="video/mp4"></source>');
 
 	var typed = new Typed('.typed', {
 		strings: [ 'The ^100own^150er of "North^50ern Synth" ^200label^1000', 'Synth^100wave Pro^50du^100cer^5000 ' ],
@@ -87,9 +83,6 @@ $(document).ready(() => {
 		}
 	});
 
-	$('#video1').html('<source src="Videos/video1.mp4" type="video/mp4"></source>');
-	$('#video2').html('<source src="Videos/video2.mp4" type="video/mp4"></source>');
-
 	$('#owl-two').owlCarousel({
 		loop: true,
 		margin: 10,
@@ -113,9 +106,7 @@ $(document).ready(() => {
 	var statsTopOffset = $('.stats-section').offset().top;
 	var TopOffset = $('#about').offset().top;
 	var coutnUpFinished = false;
-	$('#section-card ').fadeOut(100);
-	$('.next-slide').fadeOut(200);
-	$('.prev-slide').fadeOut(200);
+	$('#section-card ').css('opacity', '0');
 	$(window).scroll(function() {
 		if (window.pageYOffset > infoTopOffset - $(window).height() + 400) {
 			$('.chart').easyPieChart({
@@ -129,19 +120,15 @@ $(document).ready(() => {
 					$(this.el).find('.percent').text(Math.round(percent * 22.5));
 				}
 			});
-			$('.next-slide').fadeIn(200);
-			$('.prev-slide').fadeIn(200);
+			$('.nav-btn').css('opacity', '1');
 		}
 
 		if (window.pageYOffset > TopOffset - $(window).height()) {
-			$('#slides').css('z-index', 0);
-			$('#section-card ').fadeIn(200);
-			return $('.arrow').fadeOut(200);
+			$('#section-card ').css('opacity', '1');
+			$('.arrow').css('opacity', '0');
 		} else {
-			$('#section-card ').fadeOut(200, function() {
-				$('#slides').css('z-index', '0');
-				return $('.arrow').fadeIn(200);
-			});
+			$('#section-card').css('opacity', '0');
+			$('.arrow').css('opacity', '1');
 		}
 
 		if (!coutnUpFinished && window.pageYOffset > statsTopOffset - $(window).height() + 200) {
